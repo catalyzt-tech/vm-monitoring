@@ -26,7 +26,7 @@ services:
     volumes:
       - grafana-data:/var/lib/grafana
     restart: unless-stopped
-    #password: root123
+
   node_exporter:
     image: quay.io/prometheus/node-exporter:latest
     container_name: node_exporter
