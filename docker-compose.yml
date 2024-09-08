@@ -18,6 +18,7 @@ services:
       - ./config/prometheus.yaml:/etc/prometheus/prometheus.yaml:ro
       - ./data:/prometheus
     restart: unless-stopped
+
   grafana:
     image: grafana/grafana-oss:latest
     container_name: grafana
@@ -34,7 +35,8 @@ services:
     pid: host
     restart: unless-stopped
     volumes:
-      - /:/host:ro,rslave
+      - /:/host:ro
+
   cadvisor:
     image: gcr.io/cadvisor/cadvisor:latest
     container_name: cadvisor
