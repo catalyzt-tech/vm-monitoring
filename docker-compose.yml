@@ -41,8 +41,9 @@ services:
   cadvisor:
     image: gcr.io/cadvisor/cadvisor:latest
     container_name: cadvisor
+    command: --port=8089
     ports:
-      - '8080:8080'
+      - '8089:8089'
     volumes:
       - /:/rootfs:ro
       - /var/run:/var/run:ro
